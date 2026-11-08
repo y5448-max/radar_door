@@ -1,0 +1,9 @@
+App(
+    appid="radar_door",
+    name="Radar Door",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="radar_door_app",
+    sources=["radar_door.c"],
+    stack_size=2 * 1024,
+    fap_category="GPIO",
+)
