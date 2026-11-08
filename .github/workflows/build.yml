@@ -9,6 +9,7 @@ jobs:
         uses: flipperdevices/flipperzero-ufbt-action@v0.1
         id: build-app
         with:
+          app-dir: radar_door
           sdk-channel: release
       - uses: actions/upload-artifact@v4
         with:
