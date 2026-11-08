@@ -1,0 +1,16 @@
+name: Build
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        uses: flipperdevices/flipperzero-ufbt-action@v0.1
+        id: build-app
+        with:
+          sdk-channel: release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: radar_door
+          path: ${{ steps.build-app.outputs.fap-artifacts }}
